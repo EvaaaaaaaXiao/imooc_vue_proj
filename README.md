@@ -1,2 +1,2 @@
 # imooc_vue_proj
-Vue2.0开发学习相关
+Vue2.5开发学习相关
