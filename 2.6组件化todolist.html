@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件化TodoList</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<input type="text" v-model="inputValue"/>
+		<button @click="addTodo">提交</button>
+		<ul>
+			<!-- 用组件代替 -->
+			<!-- <li v-for="todo in todoList">{{todo}}</li> -->
+			<todo-item v-bind:content="todo"
+								 v-for="todo in todoList">
+			</todo-item>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+
+		// 全局组件
+		Vue.component("TodoItem", {
+			props: ['content'],
+			template: "<li>{{content}}</li>"
+		})
+		
+		// 局部组件
+		// 需要在Vue中进行注册
+		// var TodoItem = {
+		// 	props: ['content'],
+		// 	template: "<li>{{content}}</li>"
+		// }
+
+		var app = new Vue({
+			el: "#app",
+			// 局部组件的注册
+			// components: {
+			// 	TodoItem: TodoItem
+			// },
+			data: {
+				todoList:[],
+				inputValue:''
+			},
+			methods: {
+				addTodo: function(){
+					var that = this;
+					that.todoList.push(that.inputValue);
+					that.inputValue = '';
+				}
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TodoList</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<!-- 我的写法 用jq取值 -->
+		<!-- <input type="text" name="todocontent" /> -->
+
+		<!-- 教学写法 用v-model双向绑定数据 -->
+		<input type="text" v-model="inputValue"/>
+		<button @click="addTodo">提交</button>
+		<ul>
+			<li v-for="todo in todoList">{{todo}}</li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		var app = new Vue({
+			el: "#app",
+			data: {
+				todoList:[],
+				inputValue:''
+			},
+			methods: {
+				addTodo: function(){
+					var that = this;
+					that.todoList.push(that.inputValue);
+					that.inputValue = '';
+				}
+			}
+		})
+	</script>
+</body>
+</html>
