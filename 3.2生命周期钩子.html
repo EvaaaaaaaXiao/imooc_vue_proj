@@ -12,7 +12,10 @@
 
 		var vm = new Vue({
 			el: "#app",
-			template: "<div>hello world<</div>"
+			template: "<div>hello world<</div>",
+			data: {
+				test: 'test update'
+			},
 			beforeCreate: function() {
 				console.log("beforeCreate");
 			},
