@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue实例生命周期函数</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+	<div id="app"></div>
+
+	<script type="text/javascript">
+
+		var vm = new Vue({
+			el: "#app",
+			template: "<div>hello world<</div>"
+			beforeCreate: function() {
+				console.log("beforeCreate");
+			},
+			//外部注入后
+			created: function() {
+				console.log("created");
+			},
+			beforeMount: function() {
+				console.log(this.$el);
+				//内容为<div id="app"></div>
+				console.log("beforeMount");
+			},
+			//渲染出来的DOM已经挂载页面后
+			mounted: function() {
+				console.log(this.$el);
+				//内容为<div>hello world</div>
+				console.log("mounted");
+			},
+			//销毁实例
+			beforeDestroy: function() {
+				console.log("beforeDestroy");
+			},
+			destoryed: function() {
+				console.log("destoryed");
+			},
+			//数据发生改变
+			beforeUpdate: function() {
+				console.log("beforeUpdate");
+			},
+			updated: function() {
+				console.log("updated");
+			}
+		})
+	</script>
+</body>
+</html>
