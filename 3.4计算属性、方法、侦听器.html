@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算属性、方法、侦听器</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		{{fullNameFun()}}
+		{{fullName}}
+		{{fullNameWatch}}
+	</div>
+
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: "#app",
+			data: {
+				firstName: "Eva",
+				lastName: "Ying",
+				fullNameWatch: "Eva Ying"
+			},
+			// 侦听器
+			watch: {
+				firstName: function() {
+					console.log("侦听了一次");
+					this.fullNameWatch = this.firstName + " " + this.lastName;
+				},
+				lastName: function() {
+					console.log("侦听了一次");
+					this.fullNameWatch = this.firstName + " " + this.lastName;
+				}
+			},
+			// 方法
+			methods: {
+				fullNameFun: function() {
+					console.log("运行了一次");
+					return this.firstName + " " + this.lastName;
+				}
+			},
+			// 计算属性
+			computed: {
+				fullName: function() {
+					console.log("计算了一次");
+					return this.firstName + " " + this.lastName;
+				}
+			}
+		})
+	</script>
+</body>
+</html>
