@@ -10,7 +10,13 @@
 		<!-- 循环项添加唯一的key属性 -->
 		<div v-for="(item, index) of list"
 			 :key="item.id">
-			{{item.text}} === {{index}}
+			<div>
+				{{item.text}} === {{index}}
+			</div>
+			<span>{{item.text}}</span>
+		</div>
+		<div v-for="(item, key, index) of listObj">
+			{{item}}==={{key}}==={{index}}
 		</div>
 	</div>
 
@@ -30,7 +36,11 @@
 				},{
 					id: "010101204",
 					text: "four"
-				}]
+				}],
+				listObj: {
+					name: "Eva",
+					gender: "female"
+				}
 			}
 		})
 	</script>

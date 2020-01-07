@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件参数校验</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+	<div id="root">
+		<child content="halo"></child>
+	</div>
+
+	<script type="text/javascript">
+
+		Vue.component('child', {
+			props: {
+				content: {
+					// 这个属性的类型是字符串或者数字
+					type: [ String, Number ],
+					// 这个属性是必传的
+					required: true,
+					// 这个属性的默认值
+					default: "default value",
+					// validator(自定义校验器)校验这个属性的相关
+					validator: function(value) {
+						return (value.length < 5)
+					}
+				}
+			},
+			template: '<div>{{content}}</div>'
+		})
+
+		var vm = new Vue({
+			el: '#root'
+		})
+	</script>
+</body>
+</html>

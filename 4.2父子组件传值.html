@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>父子组件传值</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+	<div id="root">
+		<counter :count="count"></counter>
+	</div>
+
+	<script type="text/javascript">
+
+		var counter = {
+			props: ["count"],
+			data: function() {
+				return {
+					number: this.count
+				}
+			},
+			template: "<div @click='handleClick'>{{number}}</div>",
+			methods: {
+				handleClick: function() {
+					this.number ++;
+				}
+			}
+		}
+
+		var vm = new Vue({
+			el: '#root',
+			data: {
+				count: 0
+			},
+			components: {
+				counter: counter
+			}
+		})
+	</script>
+</body>
+</html>
