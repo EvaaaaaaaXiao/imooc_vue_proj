@@ -2,27 +2,49 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>非父子组件间的传值</title>
+	<title>非父子组件间的传值之总线机制（发布订阅模式/Bus/观察者模式）</title>
 	<script type="text/javascript" src="./vue.js"></script>
 </head>
 <body>
 	<div id="root">
-		<child @click.native="handleClick"></child>
+		<child content="Eva"></child>
+		<child content="xiao"></child>
 	</div>
 
 	<script type="text/javascript">
 
+		// 所有vue实例都有bus属性，该属性指向同一个实例
+		Vue.prototype.bus = new Vue();
+
 		Vue.component('child', {
-			template: '<div>Child</div>'
+			props: {
+				content: String
+			},
+			data: function() {
+				return {
+					// content是父组件的值，子组件不能修改
+					selfContent: this.content
+				}
+			},
+			template: '<div @click="handleClick">{{selfContent}}</div>',
+			methods: {
+				handleClick: function() {
+					this.bus.$emit('change', this.selfContent);
+				}
+			},
+			mounted: function() {
+				// this的作用域在function里改变了
+				var this_ = this;
+				// 监听事件
+				// 每个组件都会触发一次，当前例子会触发两次这个方法
+				this.bus.$on('change', function(msg){
+					this_.selfContent = msg;
+				})
+			}
 		})
 
 		var vm = new Vue({
-			el: '#root',
-			methods: {
-				handleClick: function() {
-					alert('click');
-				}
-			}
+			el: '#root'
 		})
 	</script>
 </body>
