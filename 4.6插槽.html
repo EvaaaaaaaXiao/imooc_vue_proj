@@ -9,19 +9,42 @@
 	<div id="root">
 		<child>
 			<!-- 具名插槽可以有多个 -->
-			<p slot="header">header</p>
-			<p slot="footer">footer</p>
+			<!-- vue2.6中引入了v-slot，取代slot -->
+			<template v-slot:header><p>header</p></template>
+			<template v-slot:footer><p>footer</p></template>
 		</child>
+		<child-list>
+			<!-- 由父组件来定义子组件这块的模板 -->
+			<template slot-scope='props'>
+				<!-- 传递的值都在slot-scope的值里 -->
+				<li>{{props.item}}</li>
+			</template>
+		</child-list>
 	</div>
 
 	<script type="text/javascript">
 
+		// 具名插槽
 		Vue.component('child', {
 			// ES6
 			template: `<div>
 						<slot name='header'></slot>
 						<p>Hello</p>
 						<slot name='footer'>在这里可以填写默认内容</slot>
+					  </div>`
+		})
+
+		// 作用域插槽
+		Vue.component('child-list', {
+			data: function() {
+				return {
+					list: [1, 2, 3, 4]
+				}
+			},
+			template: `<div>
+						<ul>
+							<slot v-for="item of list" :item=item></slot>
+						</ul>
 					  </div>`
 		})
 
