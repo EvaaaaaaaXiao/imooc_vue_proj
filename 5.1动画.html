@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+	<script type="text/javascript" src="./vue.js"></script>
+	<style>
+		.v-enter {
+			opacity: 0;
+		}
+		.v-enter-active {
+			transition: opacity 3s;
+		}
+		.v-leave-to {
+			opacity: 0;
+		}
+		.v-leave-active {
+			transition: opacity 3s;
+		}
+	</style>
+</head>
+<body>
+	<div id="root">
+		<transition name="fade">
+			<div v-if="show">hello world</div>
+		</transition>
+		<button @click="handleClick">change</button>
+	</div>
+
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#root',
+			data: {
+				show: true
+			},
+			methods: {
+				handleClick: function() {
+					this.show = !this.show;
+				}
+			}
+		})
+	</script>
+</body>
+</html>
