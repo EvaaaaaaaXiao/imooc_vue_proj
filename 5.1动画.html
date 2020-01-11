@@ -2,26 +2,23 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>动画</title>
+	<title>css动画</title>
 	<script type="text/javascript" src="./vue.js"></script>
 	<style>
-		.v-enter {
-			opacity: 0;
-		}
-		.v-enter-active {
-			transition: opacity 3s;
-		}
+		.v-enter,
 		.v-leave-to {
 			opacity: 0;
 		}
+		.v-enter-active,
 		.v-leave-active {
 			transition: opacity 3s;
 		}
 	</style>
 </head>
 <body>
+	<!-- 需求：实现渐入渐出的动画效果 -->
 	<div id="root">
-		<transition name="fade">
+		<transition>
 			<div v-if="show">hello world</div>
 		</transition>
 		<button @click="handleClick">change</button>
