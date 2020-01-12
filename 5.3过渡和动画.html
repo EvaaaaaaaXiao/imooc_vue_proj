@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>同时使用过渡和动画</title>
+	<link rel="stylesheet" type="text/css" href="./animate.min.css">
+	<script type="text/javascript" src="./vue.js"></script>
+	<style type="text/css" media="screen">
+		.v-enter,
+		.v-leave-to {
+			opacity: 0;
+		}
+		.v-enter-active,
+		.v-leave-active {
+			transition: opacity 3s;
+		}
+	</style>
+</head>
+<body>
+	<!-- 在元素刚打开页面第一次显示的时候就有动画效果 -->
+	<!-- animate的动画效果和transition的过渡效果同时使用 -->
+	<!-- 并自定义动画的总时长，即过了多久动画样式才会被清除 -->
+	<!-- type="transition" 以transition的时长作为总时长 -->
+	<!-- :duration="数字" 入场和出场同一时长 -->
+	<div id="root">
+		<transition
+			:duration="{enter:3000, leave:5000}" 
+			appear
+			enter-active-class="animated swing v-enter-active"
+			leave-active-class="animated shake v-leave-active"
+			appear-active-class="animated swing"
+		>
+			<div v-if="show">hello world</div>
+		</transition>
+		<button @click="handleClick">toggle</button>
+	</div>
+
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#root',
+			data: {
+				show: true
+			},
+			methods: {
+				handleClick: function() {
+					this.show = !this.show;
+				}
+			}
+		})
+	</script>
+</body>
+</html>

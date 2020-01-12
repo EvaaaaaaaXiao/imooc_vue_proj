@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>velocity.js库</title>
+	<script type="text/javascript" src="./vue.js"></script>
+	<script type="text/javascript" src="./velocity.min.js"></script>
+</head>
+<body>
+	<div id="root">
+		<transition 
+			name="fade"
+			@before-enter="handleBeforeEnter"
+			@enter="handleEnter"
+			@after-enter="handleAfterEnter"
+		>
+			<div v-if="show">hello world</div>
+		</transition>
+		<button @click="handleClick">toggle</button>
+	</div>
+
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#root',
+			data: {
+				show: false 
+			},
+			methods: {
+				handleClick: function() {
+					this.show = !this.show;
+				},
+				handleBeforeEnter: function(el) {
+					el.style.opacity =  0;
+				},
+				handleEnter: function(el, done) {
+					Velocity(el, {
+						opacity: 1
+					},{
+						duration: 2000,
+						complete:  done
+					})
+				},
+				handleAfterEnter: function(el) {
+					console.log("finish")
+				}
+			}
+		})
+	</script>
+</body>
+</html>
