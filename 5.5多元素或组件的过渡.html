@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多个元素或组件的过渡</title>
+	<script type="text/javascript" src="./vue.js"></script>
+	<style type="text/css">
+		.v-enter,
+		.v-leave-to {
+			opacity: 0;
+		}
+		.v-enter-active,
+		.v-leave-active {
+			transition: opacity 1s;
+		}
+	</style>
+</head>
+<body>
+	<div id="root">
+		<transition mode="in-out">
+			<!-- <div v-if="show" key="hello">hello world</div>
+			<div v-else key="bye">bye world</div> -->
+			<component :is="type"></component>
+		</transition>
+		<button @click="handleClick">toggle</button>
+	</div>
+
+	<script type="text/javascript">
+
+		Vue.component('child-one', {
+			template: '<div>child-one</div>'
+		})
+
+		Vue.component('child-two', {
+			template: '<div>child-two</div>'
+		})
+
+		var vm = new Vue({
+			el: '#root',
+			data: {
+				show: true,
+				type: 'child-one'
+			},
+			methods: {
+				handleClick: function() {
+					this.show = !this.show;
+					this.type = this.type === "child-one" ? "child-two" : "child-one";
+				}
+			}
+		})
+	</script>
+</body>
+</html>
