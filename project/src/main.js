@@ -9,6 +9,8 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  /* ES6 当键和值是一样的时候可以这样写 */
+  /* 意思是router: router, { App: App } */
   router,
   components: { App },
   template: '<App/>'
