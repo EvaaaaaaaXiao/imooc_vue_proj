@@ -1,0 +1,82 @@
+{
+	"ret": true,
+	"data": {
+		"city": "杭州",
+		"swiperList": [{
+      "id": "0001",
+      "imgUrl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20201/1586638277619f1041ebd03877cfccee.jpg_750x200_8db6a58a.jpg"
+    }, {
+      "id": "0002",
+      "imgUrl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20201/7b45da191f638f13455777030853a1ea.jpg_750x200_883fe3a8.jpg"
+    }],
+    "iconList": [{
+      "id": "0001",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
+      "desc": "景点门票"
+    }, {
+      "id": "0002",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/fc/b10a6b2e4f0fe102.png",
+      "desc": "滑雪戏雪"
+    }, {
+      "id": "0003",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/ab/6f7d6e44963c9302.png",
+      "desc": "泡温泉"
+    }, {
+      "id": "0004",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png",
+      "desc": "动植物园"
+    }, {
+      "id": "0005",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png",
+      "desc": "一日游"
+    }, {
+      "id": "0006",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/f5/a963333e1fa802.png",
+      "desc": "必游榜单"
+    }, {
+      "id": "0007",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/b8/c5dcdb58deec2402.png",
+      "desc": "自然风光"
+    }, {
+      "id": "0008",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/e3/67df61427c8e1302.png",
+      "desc": "全部"
+    }, {
+      "id": "0009",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/ab/6f7d6e44963c9302.png",
+      "desc": "泡温泉"
+    }],
+    "recommendList": [{
+      "id": "0001",
+      "imgUrl": "http://img1.qunarzz.com/sight/p0/201406/09/9b6a236005af2a74aad1ed2dadf8e5b6.jpg_200x200_a72deb02.jpg",
+      "title": "雪窦山",
+      "desc": "让心灵去远行,去雪窦山进行一场禅修之旅吧"
+    }, {
+      "id": "0002",
+      "imgUrl": "http://img1.qunarzz.com/sight/p0/1809/2c/2c6e61da64812082a3.img.jpg_200x200_709f00bc.jpg",
+      "title": "雅戈尔动物园",
+      "desc": "野生风情，动物天堂"
+    }, {
+      "id": "0003",
+      "imgUrl": "http://img1.qunarzz.com/sight/p0/1504/93/93f1260f44dbbe38.water.jpg_200x200_e512d31b.jpg",
+      "title": "罗蒙环球乐园",
+      "desc": "这里最近很火哦，好多人都在点评它呢！"
+    }],
+    "weekendList": [{
+      "id": "0001",
+      "imgUrl": "http://img1.qunarzz.com/sight/source/1811/52/b6776b49d27025.jpg_r_640x214_35ae205c.jpg",
+      "title": "美丽普陀山",
+      "desc": "人间仙境杭州，佛教圣地普陀山等你来玩！在这里静心接收佛家的洗礼，用心感受佛文化"
+    }, {
+      "id": "0002",
+      "imgUrl": "http://img1.qunarzz.com/sight/source/1606/18/fccb1a2f45f742.jpg_r_640x214_55564c3f.jpg",
+      "title": "绍兴古居畅游",
+      "desc": "这里是一代文豪诞生地，也是现今的文化历史街区，感受浓厚的历史人文沉淀"
+    }, {
+      "id": "0003",
+      "imgUrl": "http://img1.qunarzz.com/sight/source/1810/17/30354793b9f72e.jpg_r_640x214_8df352c4.jpg",
+      "title": "亲子时光必玩",
+      "desc": "这个周末别宅在家里了，带宝贝走进大自然或去主题乐园打卡吧，呼吸清新空气回归自然"
+    }]
+	}
+}

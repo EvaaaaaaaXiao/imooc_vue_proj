@@ -4,7 +4,7 @@
       周末去哪儿
     </div>
     <ul>
-      <li class="item" v-for="item of recommendList" :key="item.id">
+      <li class="item" v-for="item of weekendList" :key="item.id">
         <div class="item-img-wrapper">
           <img class="item-img" :src="item.imgUrl" />
         </div>
@@ -22,7 +22,7 @@ export default {
   name: 'HomeWeekend',
   data () {
     return {
-      recommendList: [{
+      weekendList: [{
         id: '0001',
         imgUrl: 'http://img1.qunarzz.com/sight/source/1811/52/b6776b49d27025.jpg_r_640x214_35ae205c.jpg',
         title: '美丽普陀山',
@@ -48,7 +48,6 @@ export default {
   .title
     line-height: .8rem
     text-indent: .2rem
-    margin-top: .2rem
     background: #eee
   .item-img-wrapper
     overflow: hidden
