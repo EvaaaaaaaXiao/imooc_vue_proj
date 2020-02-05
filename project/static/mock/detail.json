@@ -1,9 +1,9 @@
 {
   "ret": true,
   "data": {
-    "sightName": "大连圣亚海洋世界(AAAA景区)",
-    "bannerImg": "http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_600x330_bf9c4904.jpg",
-    "gallaryImgs": ["http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_800x800_70debc93.jpg", "http://img1.qunarzz.com/sight/p0/1709/76/7691528bc7d7ad3ca3.img.png_800x800_9ef05ee7.png"],
+    "sightName": "雪窦山",
+    "bannerImg": "http://img1.qunarzz.com/sight/p0/201406/09/9b6a236005af2a74aad1ed2dadf8e5b6.jpg_600x330_6d254a92.jpg",
+    "gallaryImgs": ["http://img1.qunarzz.com/sight/p0/201406/09/9b6a236005af2a74aad1ed2dadf8e5b6.jpg_r_800x800_1692ae93.jpg", "http://img1.qunarzz.com/sight/p0/201406/09/7c02b0eda40baa5c707f6f24e172b978.jpg_r_800x800_14e33e19.jpg", "http://img1.qunarzz.com/sight/p0/1412/4d/11d15f2de922b2ef09d59d44ab635530.water.jpg_r_800x800_9dcef1a2.jpg"],
     "categoryList": [{
         "title": "成人票",
         "children": [{

@@ -46,6 +46,7 @@ export default {
     }
   },
   activated () {
+    this.showAbs = true
     window.addEventListener('scroll', this.handleScroll)
   },
   deactivated () {
@@ -70,6 +71,7 @@ export default {
       color: #fff
       font-size: .4rem
   .header-fixed
+    z-index: 9
     position: fixed
     top: 0
     left: 0
